@@ -22,18 +22,34 @@ mobilePayApp.controller('MainPage', ['$timeout','$scope','$http', 'main_service'
   $scope.main = {};
 
   $scope.scan = function(){
+
+    //var res = JSON.parse('{ \"employee\": \"Shea Croshaw\", \"position\": \"ruffneck sheriff\" }');
+    //console.log(res);
+    // $scope.emp = res.employee;
+    // $scope.pos = res.position;
+
     cordova.plugins.barcodeScanner.scan(
       function (result) {
           alert("We got a barcode\n" +
                 "Result: " + result.text + "\n" +
                 "Format: " + result.format + "\n" +
                 "Cancelled: " + result.cancelled);
+
+          console.log(typeof result.text,result.text);
+          var res = JSON.parse(result.text.replace(/\\"/g, '"'));
+          console.log(typeof res);
+          $scope.emp = res.employee;
+          $scope.pos = res.position;
+
+          if (!$scope.$$phase){
+            $scope.$apply();
+          }
       }, 
       function (error) {
           alert("Scanning failed: " + error);
       }
    );
-  }
+  };
 
 
 
