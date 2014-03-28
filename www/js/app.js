@@ -36,10 +36,7 @@ mobilePayApp.controller('MainPage', ['$timeout','$scope','$http', 'main_service'
           //       "Cancelled: " + result.cancelled);
 
 
-          alert("We got a barcode\n" +
-                "Result: " + result.text + "\n" +
-                "Format: " + result.format + "\n" +
-                "Cancelled: " + result.cancelled);
+    alert("We got a barcode\n" );
 
           var res = JSON.parse(result.text.replace(/\\"/g, '"'));
 
