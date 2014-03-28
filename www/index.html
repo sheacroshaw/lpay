@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular-mobile.js"></script>
+    <script type='application/javascript' src='js/fastclick.js'></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
+    
+
+    <script src="js/app.js"></script>
+
+
+    <script type="application/javascript">
+    window.addEventListener('load', function() {
+        var textInput = document.querySelector('input');
+
+        FastClick.attach(document.body);
+        Array.prototype.forEach.call(document.getElementsByClassName('test'), function(testEl) {
+            testEl.addEventListener('click', function() {
+                textInput.focus();
+            }, false)
+        });
+    }, false);
+    </script>    
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+    <title>Employee Payroll</title>
+
+</head>
+<body ng-app="mobilePayApp" onload="init();">
+    <div ng-controller="MainPage" class='main_app'>
+        <script type="text/javascript" src="cordova.js"></script>
+
+        <div class="btn-group btn-group-justified">
+              <div class="btn-group">
+                <button type="button" id="on_main" class="btn btn-primary" ng-click="show_main_entry()" >Create Entry</button>
+              </div>
+              <div class="btn-group">
+                <button type="button" id="on_list" class="btn btn-default" ng-click="show_main_list()">Show Time</button>
+              </div>
+        </div>
+
+
+           
+
+        <div id="main_entry">
+
+            
+            <h2>Mobile Payroll</h2>
+            <div id="status"></div>
+            <div id="screendata"></div>
+            <br>
+
+            <div class="form-group">
+                <label >Name</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Name" ng-model="Main.Employee_Name">
+            </div>   
+
+
+            <div class="form-group">
+                <label >ID</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Employee ID" ng-model="Main.Employee_Id">
+            </div>
+            <br><br>
+
+            <table ng-repeat="row in rowsdata" style="margin-top:50px;">
+                <tr>
+                    <td colspan='2'>
+                        <div class="form-group">
+
+                            <label >Job Number</label>
+                            <button style="display:inline; margin:3px;" ng-click="move_back($index)" type="button" class="btn btn-danger">Remove Job</button>
+                            <input type="text" style="width:95%" class="form-control " ng-model="row.Job_Number" placeholder="Job Number">
+
+                        </div>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan='2'>
+                        <div class="form-group">
+                            <label >Crew Assignment</label>
+                            <input type="text" style="width:95%" class="form-control " ng-model="row.Crew_Assignment" placeholder="Crew Assignment">
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label >Onsite</label>
+                            <input type="text" style="width:95%" class="form-control col-xs-1" ng-model="row.Onsite" placeholder="Onsite">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label >Offiste</label>
+                            <input type="text" style="width:95%" class="form-control col-xs-1" ng-model="row.Offsite" placeholder="Offsite">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label >Per Diem</label>
+                            <input type="text" style="width:95%" class="form-control col-xs-1" ng-model="row.Per_Diem" placeholder="Per Diem">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+
+
+
+
+            <button ng-click="AddRow()" type="button" class="btn btn-primary" style="display:inline; margin:3px;">Add Job</button>
+
+            <br><br>
+            <h3 id="show_me_callback"></h3>
+            <button type="button" ng-click="save_deal()" class="btn btn-success btn-block">Send Hours</button>
+           
+        </div> <!-- End Main Entry -->
+
+        <div id="main_list" >
+                
+                <table class="table .table-striped">
+                        <tr ng-repeat="emps in Employees">
+                            <td>{{emps.Date | date:'MM/dd'}}</td>
+                            <td>{{emps.Name}}</td>
+                            <td>{{emps.onsite}}</td>
+                        </tr>
+                </table>
+
+
+        </div>
+
+
+        <div>
+
+
+
+        </body>
+        </html>

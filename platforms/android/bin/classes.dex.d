@@ -1,0 +1,19 @@
+/home/shea/sites/payrollApp/platforms/android/bin/classes.dex : \
+/home/shea/sites/payrollApp/platforms/android/bin/classes/org/apache/cordova/device/Device.class \
+/home/shea/sites/payrollApp/platforms/android/bin/classes/com/phonegap/plugins/barcodescanner/BarcodeScanner.class \
+/home/shea/sites/payrollApp/platforms/android/bin/classes/com/ex/payrollApp/R$drawable.class \
+/home/shea/sites/payrollApp/platforms/android/bin/classes/com/ex/payrollApp/R$xml.class \
+/home/shea/sites/payrollApp/platforms/android/bin/classes/com/ex/payrollApp/R$raw.class \
+/home/shea/sites/payrollApp/platforms/android/bin/classes/com/ex/payrollApp/R$menu.class \
+/home/shea/sites/payrollApp/platforms/android/bin/classes/com/ex/payrollApp/MobilePay.class \
+/home/shea/sites/payrollApp/platforms/android/bin/classes/com/ex/payrollApp/R$id.class \
+/home/shea/sites/payrollApp/platforms/android/bin/classes/com/ex/payrollApp/BuildConfig.class \
+/home/shea/sites/payrollApp/platforms/android/bin/classes/com/ex/payrollApp/R.class \
+/home/shea/sites/payrollApp/platforms/android/bin/classes/com/ex/payrollApp/R$layout.class \
+/home/shea/sites/payrollApp/platforms/android/bin/classes/com/ex/payrollApp/R$color.class \
+/home/shea/sites/payrollApp/platforms/android/bin/classes/com/ex/payrollApp/R$dimen.class \
+/home/shea/sites/payrollApp/platforms/android/bin/classes/com/ex/payrollApp/R$array.class \
+/home/shea/sites/payrollApp/platforms/android/bin/classes/com/ex/payrollApp/R$attr.class \
+/home/shea/sites/payrollApp/platforms/android/bin/classes/com/ex/payrollApp/R$string.class \
+/home/shea/sites/payrollApp/platforms/android/bin/dexedLibs/cordova-3.1.0-75a58249d3548ad59852673147e4a283.jar \
+/home/shea/sites/payrollApp/platforms/android/bin/dexedLibs/com.google.zxing.client.android.captureactivity-9b977e2a03c8438921d266f01fd02597.jar \
