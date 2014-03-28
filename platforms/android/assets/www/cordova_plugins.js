@@ -14,5 +14,12 @@ module.exports = [
             "cordova.plugins.barcodeScanner"
         ]
     }
-]
+];
+module.exports.metadata = 
+// TOP OF METADATA
+{
+    "org.apache.cordova.device": "0.2.8",
+    "com.phonegap.plugins.barcodescanner": "1.1.0"
+}
+// BOTTOM OF METADATA
 });
